@@ -1,0 +1,306 @@
+object fmaCreateActs: TfmaCreateActs
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = #1043#1077#1085#1077#1088#1072#1094#1080#1103' '#1072#1082#1090#1086#1074
+  ClientHeight = 290
+  ClientWidth = 445
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label3: TLabel
+    Left = 22
+    Top = 24
+    Width = 39
+    Height = 15
+    Caption = #1052#1077#1089#1103#1094':'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 241
+    Top = 24
+    Width = 22
+    Height = 15
+    Caption = #1043#1086#1076':'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblNameOrg: TLabel
+    Left = 12
+    Top = 135
+    Width = 308
+    Height = 15
+    Caption = #1054#1088#1075#1072#1085#1080#1079#1072#1094#1080#1103'('#1076#1083#1103' '#1074#1099#1075#1088#1091#1079#1082#1080' '#1074#1089#1077#1093' '#1086#1089#1090#1072#1074#1100#1090#1077' '#1087#1086#1083#1077' '#1087#1091#1089#1090#1099#1084'):'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 15
+    Top = 203
+    Width = 163
+    Height = 15
+    Caption = #1044#1086#1083#1078#1085#1086#1089#1090#1100' '#1087#1086#1076#1087#1080#1089#1099#1074#1072#1077#1084#1086#1075#1086':'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 15
+    Top = 230
+    Width = 78
+    Height = 15
+    Caption = #1048'.'#1054'.'#1060#1072#1084#1080#1083#1080#1103':'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 12
+    Top = 107
+    Width = 132
+    Height = 15
+    Caption = #1055#1088#1086#1075#1088#1072#1084#1084#1085#1099#1081' '#1087#1088#1086#1076#1091#1082#1090':'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblOR: TLabel
+    Left = 194
+    Top = 49
+    Width = 21
+    Height = 15
+    Caption = #1080#1083#1080
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblDATE_ACT: TLabel
+    Left = 116
+    Top = 72
+    Width = 28
+    Height = 15
+    Caption = #1044#1072#1090#1072':'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object edREP_YEAR: TDBEditEh
+    Left = 269
+    Top = 22
+    Width = 89
+    Height = 21
+    DataField = 'rep_year'
+    DataSource = dsActs
+    DynProps = <>
+    EditButtons = <>
+    MaxLength = 4
+    TabOrder = 1
+    Visible = True
+    OnChange = ChangeData
+  end
+  object edREP_POST: TDBEditEh
+    Left = 184
+    Top = 201
+    Width = 237
+    Height = 21
+    DataField = 'rep_post'
+    DataSource = dsActs
+    DynProps = <>
+    EditButtons = <>
+    TabOrder = 3
+    Visible = True
+    OnChange = ChangeData
+  end
+  object edREP_FIO: TDBEditEh
+    Left = 184
+    Top = 228
+    Width = 237
+    Height = 21
+    DataField = 'rep_fio'
+    DataSource = dsActs
+    DynProps = <>
+    EditButtons = <>
+    TabOrder = 4
+    Visible = True
+    OnChange = ChangeData
+  end
+  object btnPrint: TcxButton
+    Left = 260
+    Top = 257
+    Width = 161
+    Height = 25
+    Caption = #1055#1077#1095#1072#1090#1100' '#1074' Word'
+    OptionsImage.Glyph.SourceDPI = 96
+    OptionsImage.Glyph.Data = {
+      89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+      610000001D744558745469746C65004578706F72743B446F633B4578706F7274
+      546F446F633B28216692000001F149444154785E8D533D6B1541143DB37EC4C2
+      2A7F206A61A3854D48E3CB2A5149142D4C91D8AAA595A2425E5EFC7A29046B11
+      ECC4420B1F1A0928820F89048910486111627E8020588826D9B733C799C3CCB2
+      BCCA1D66CFBD77F69C7BF7CE8C01D03F91B0CF4E400025C980D81D480F9F7EF9
+      98992CD76A18140B8E7A8301E9110665B9BD3477EDC418805E12C84093DFB83A
+      5CE9D78C7E17F38F971B0076D5054C4927E24E61455071C2246214DFB7D7C096
+      0E4AAA270AD8C2CAB1649589B125D2368CC206A5D5B7A62EE055AD288C023446
+      36218D644B2C1F19C27C5F8707661E75B71F5CCFD17EF10D5FD77FC2894038E7
+      64CBA7AB7C2A26BB93E9175401B0E2C9AF9AC7D19919C5C8E14111A71A4378D3
+      3CE9F1009C23A61B07B1D03A8585D9D341F0A2048A9E0509A9D2195C6877716B
+      F2A8324E79C2B9FB1F0251EB97460F61E2EE7B4CDC7BA704EA412F56502F9D24
+      6CC0E46B5D3EA8756AAA026B6305D60945A488401062F2FD644CA4511300D518
+      E1DBD618DA2FD7447CDEDDC4E2DC198FDFA3BF81C53BE33E365EEDC2FECBB75F
+      FF7ED23E8FE6B355DFC81FB1F34EC86A07203B8CDAD349E740E1D6F4B17417D2
+      BE47DB55B1A5E54D4C9E3D3248F2573A4865B1F5F7D3959B9DDC11C8E2C109B6
+      31D4AEC4A4122F76FE7C0650D40E92FA300060CF7F5C69C64BB445525BF70F86
+      907C0D029B0BD70000000049454E44AE426082}
+    TabOrder = 5
+    OnClick = btnPrintClick
+  end
+  object btnClose: TBitBtn
+    Left = 8
+    Top = 257
+    Width = 161
+    Height = 25
+    Caption = #1047#1072#1082#1088#1099#1090#1100
+    Glyph.Data = {
+      36040000424D3604000000000000360000002800000010000000100000000100
+      2000000000000004000000000000000000000000000000000000000000030000
+      000B000000120000001300000013000000140000001400000014000000140000
+      0014000000140000001500000015000000140000000D000000030000000B1C11
+      6CC3261796FF271696FF261695FF261594FF251594FF251594FF241394FF2412
+      93FF241292FF231292FF231192FF231191FF190C68C50000000C0000000F2B1C
+      9BFF384AD3FF2637CEFF3042D2FF4254D9FF3646D4FF2437CCFF2434CCFF3444
+      D3FF3C4ED6FF2A3ACEFF202FC9FF1E2CC9FF251595FF000000120000000F3121
+      A0FF4356D7FF374BD5FF3F4BCBFF2827ABFF363CBEFF3E4FD6FF3D4ED5FF353A
+      BEFF2827ABFF3B45C9FF2F41D0FF2332CCFF291A99FF000000120000000E3529
+      A5FF4E62DBFF444FCCFF605DBDFFEDEDF8FF8B89CEFF383CBCFF383CBBFF8B89
+      CEFFEDEDF8FF5F5DBDFF3D47C9FF293ACEFF2D1F9EFF000000110000000D392F
+      ABFF596FDFFF2722A5FFECE7ECFFF5EBE4FFF8F2EEFF9491D1FF9491D1FFF8F1
+      EDFFF3E9E2FFECE6EBFF2721A5FF2F42D1FF3326A3FF0000000F0000000C4036
+      B1FF657AE2FF3135B7FF8070ADFFEBDBD3FFF4EAE4FFF7F2EDFFF8F1EDFFF4E9
+      E2FFEADAD1FF7F6FACFF2E31B6FF3549D5FF372CA9FF0000000E0000000B453D
+      B6FF6E83E5FF485EDCFF393BB7FF8A7FB9FFF6ECE7FFF5ECE6FFF4EBE5FFF6EB
+      E5FF897DB8FF3739B6FF4054D9FF3D51D7FF3C33AFFF0000000D0000000A4A44
+      BCFF788FE8FF6077E3FF4B4BBBFF9189C7FFF7EFE9FFF6EEE9FFF6EFE8FFF7ED
+      E8FF9087C5FF4949BAFF596FDFFF4359DAFF423AB4FF0000000C00000009504C
+      C2FF92A7EEFF5655BCFF8F89CAFFFBF6F4FFF7F1ECFFEDE1D9FFEDE0D9FFF7F0
+      EAFFFAF5F2FF8F89CAFF5453BCFF6278E2FF4943B9FF0000000B000000086B6A
+      D0FFADC1F4FF2A1E9BFFE5DADEFFF6EEEBFFEDDFDAFF816EA9FF816EA9FFEDDF
+      D8FFF4ECE7FFE5D9DCFF2A1D9BFF8B9EEBFF6563C9FF0000000A000000077577
+      D6FFB1C6F5FF6E77D1FF5747A1FFCCB6BCFF7A68A8FF4E4CB7FF4F4EB8FF7A68
+      A8FFCBB5BCFF5746A1FF6B75D0FF8EA1ECFF706ED0FF0000000900000006797B
+      DAFFB5CAF6FF93A7EEFF7079D2FF2E229BFF5453BBFF93A7EEFF93A7EEFF5555
+      BCFF2E219BFF6F77D1FF91A4EDFF90A3EDFF7475D4FF00000008000000057D80
+      DEFFB9CDF6FFB9CDF6FFB9CCF6FFB9CCF6FFB9CDF6FFB8CCF6FFB8CCF6FFB7CC
+      F6FFB7CBF6FFB6CBF6FFB5C9F6FFB5C9F6FF787AD8FF00000006000000036062
+      A6C08184E1FF8183E0FF8083E0FF7F83DFFF7F83DFFF7F82DFFF7E81DFFF7E81
+      DEFF7D81DEFF7D80DEFF7D7FDEFF7C7FDDFF5C5EA3C100000004000000000000
+      0002000000030000000400000004000000040000000400000004000000040000
+      0004000000040000000400000005000000050000000300000001}
+    TabOrder = 6
+    OnClick = btnCloseClick
+  end
+  object eCODE_PROG: TEnComboBox
+    Left = 150
+    Top = 105
+    Width = 271
+    Height = 21
+    DynProps = <>
+    DataField = 'code_prog'
+    DataSource = dsActs
+    DropDownBox.Sizable = True
+    EditButtons = <>
+    KeyField = 'code_prog'
+    ListField = 'name_prog_full'
+    TabOrder = 2
+    Visible = True
+    OnChange = eCODE_PROGChange
+  end
+  object edREP_MONTH: TEnComboBox
+    Left = 67
+    Top = 22
+    Width = 121
+    Height = 21
+    DynProps = <>
+    DataField = 'rep_month'
+    DataSource = dsActs
+    DropDownBox.Sizable = True
+    EditButtons = <>
+    KeyField = 'code_month'
+    ListField = 'name_month'
+    TabOrder = 0
+    Visible = True
+    OnChange = ChangeData
+  end
+  object echkCODE_ORG: TcxDBCheckComboBox
+    Left = 12
+    Top = 156
+    DataBinding.DataField = 'code_org2'
+    DataBinding.DataSource = dsActs
+    ParentShowHint = False
+    Properties.EditValueFormat = cvfCaptions
+    Properties.Items = <>
+    ShowHint = False
+    TabOrder = 7
+    Text = 'None selected'
+    Width = 409
+  end
+  object edDATE_ACT: TDBDateTimeEditEh
+    Left = 150
+    Top = 70
+    Width = 139
+    Height = 21
+    DataField = 'date_act'
+    DataSource = dsActs
+    DynProps = <>
+    EditButtons = <>
+    Kind = dtkDateEh
+    TabOrder = 8
+    Visible = True
+  end
+  object mtActs: TEnMemTable
+    Params = <>
+    Left = 388
+    Top = 37
+  end
+  object dsActs: TDataSource
+    DataSet = mtActs
+    Left = 388
+    Top = 12
+  end
+end

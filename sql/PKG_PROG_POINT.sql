@@ -1,0 +1,93 @@
+﻿CREATE OR REPLACE PACKAGE INVPAY.PKG_PROG_POINT 
+IS
+
+FUNCTION load_all
+RETURN pkg_base.tcursor;
+-------------------------------------
+PROCEDURE delete_prog_point
+(
+   in_code_prog_point INVPAY.DICT_PROG_POINT.CODE_PROG_POINT%TYPE
+);
+---------------------------------------
+PROCEDURE save_prog_point
+(
+   in_code_prog_point   INVPAY.DICT_PROG_POINT.CODE_PROG_POINT%TYPE,
+   in_name_prog_point   INVPAY.DICT_PROG_POINT.NAME_PROG_POINT%TYPE,
+   in_name_unit         INVPAY.DICT_PROG_POINT.NAME_UNIT%TYPE,
+   in_cost_one          INVPAY.DICT_PROG_POINT.COST_ONE%TYPE,
+   in_code_prog         INVPAY.DICT_PROG_POINT.CODE_PROG%TYPE,
+   in_num_price         INVPAY.DICT_PROG_POINT.NUM_PRICE%TYPE,
+   in_date_start        INVPAY.DICT_PROG_POINT.DATE_START%TYPE
+);
+-----------------------------------
+END PKG_PROG_POINT;
+/
+
+CREATE OR REPLACE PACKAGE BODY INVPAY.PKG_PROG_POINT 
+IS
+
+FUNCTION load_all
+RETURN pkg_base.tcursor
+IS
+ l_result pkg_base.tcursor;
+BEGIN
+  OPEN L_RESULT FOR 
+  SELECT
+     DPP.CODE_PROG_POINT, 
+     DPP.NAME_PROG_POINT, 
+     DPP.NAME_UNIT, 
+     DPP.COST_ONE, 
+     DPP.CODE_PROG, 
+     DP.NAME_PROG_FULL,
+     DPP.NUM_PRICE,
+     DPP.DATE_START
+  FROM INVPAY.DICT_PROG_POINT dpp,
+       INVPAY.DICT_PROG dp
+  WHERE dpp.CODE_PROG = dp.CODE_PROG
+  ORDER BY DP.NAME_PROG_FULL, DPP.NAME_PROG_POINT;
+RETURN l_result;
+END load_all;
+-------------------------------------
+PROCEDURE delete_prog_point
+(
+   in_code_prog_point INVPAY.DICT_PROG_POINT.CODE_PROG_POINT%TYPE
+)
+IS
+BEGIN
+   DELETE FROM INVPAY.DICT_PROG_POINT WHERE CODE_PROG_POINT = IN_CODE_PROG_POINT;
+END DELETE_PROG_POINT;
+---------------------------------------
+PROCEDURE save_prog_point
+(
+   in_code_prog_point   INVPAY.DICT_PROG_POINT.CODE_PROG_POINT%TYPE,
+   in_name_prog_point   INVPAY.DICT_PROG_POINT.NAME_PROG_POINT%TYPE,
+   in_name_unit         INVPAY.DICT_PROG_POINT.NAME_UNIT%TYPE,
+   in_cost_one          INVPAY.DICT_PROG_POINT.COST_ONE%TYPE,
+   in_code_prog         INVPAY.DICT_PROG_POINT.CODE_PROG%TYPE,
+   in_num_price         INVPAY.DICT_PROG_POINT.NUM_PRICE%TYPE,
+   in_date_start        INVPAY.DICT_PROG_POINT.DATE_START%TYPE
+)
+IS
+   iNEW_CODE_PROG_POINT INVPAY.DICT_PROG_POINT.CODE_PROG_POINT%TYPE;
+BEGIN
+  IF IN_CODE_PROG_POINT = 0 THEN
+    SELECT NVL(MAX(CODE_PROG_POINT), 0) + 1 INTO INEW_CODE_PROG_POINT FROM INVPAY.DICT_PROG_POINT;     
+
+    INSERT INTO INVPAY.DICT_PROG_POINT 
+           (CODE_PROG_POINT, NAME_PROG_POINT, NAME_UNIT, COST_ONE, CODE_PROG, NUM_PRICE, DATE_START)
+    VALUES (INEW_CODE_PROG_POINT, IN_NAME_PROG_POINT, IN_NAME_UNIT, IN_COST_ONE, IN_CODE_PROG, IN_NUM_PRICE, IN_DATE_START);
+  ELSE
+    UPDATE INVPAY.DICT_PROG_POINT SET 
+      NAME_PROG_POINT = IN_NAME_PROG_POINT,
+      NAME_UNIT = IN_NAME_UNIT, 
+      COST_ONE = IN_COST_ONE, 
+      CODE_PROG = IN_CODE_PROG, 
+      NUM_PRICE = IN_NUM_PRICE,
+      DATE_START = IN_DATE_START
+  WHERE CODE_PROG_POINT = IN_CODE_PROG_POINT;
+  END IF;
+
+END SAVE_PROG_POINT;
+--------------------------------------------------------------------------------
+END PKG_PROG_POINT;
+/
